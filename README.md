@@ -18,17 +18,17 @@ In this vignette we meet Samantha Miles. Her journey is unclear, her destination
 
 ## Screenshots:
 
-###Start Screen, Hero, Strangers and Background
+Start Screen, Hero, Strangers and Background
 ![Start Screen](images/start_screen.png)
 ![Hero](images/hero_sunny.png)
 ![Strangers](images/ghost_dark.png)
 ![Background](images/bg.png)
-###Bullets —- Smiles prefers conflict resolution, here our some of her methods
+Bullets —- Smiles prefers conflict resolution, here our some of her methods
 ![Cupcake](images/cupcake.png)
-![Doughnut](images/dougnut.png)
+![Doughnut](images/doughnut.png)
 ![Cookie](images/cookie.png)
 ![Icecream](images/icecream.png)
-###Denouement
+Denouement
 ![Happy Strangers](images/ghost_sunny.png)
 ![Background](images/bg_sunny.png)
 ![Hero](images/hero_dark.png)
