@@ -32,8 +32,8 @@ In this vignette we meet Samantha Miles. Her journey is unclear, her destination
 	Background
 ![Background](images/bg.png)
 
-### Bullets : Smiles prefers conflict resolution
-### Here our some of her methods
+### Bullets 
+### Smiles prefers conflict resolution. Here our some of her methods
 
 	Cupcake
 ![Cupcake](images/cupcake.png)
@@ -62,7 +62,8 @@ In this vignette we meet Samantha Miles. Her journey is unclear, her destination
 ## Project History:
 
 9/19/2017 - Project Start
-Project status - incomplete [See Project Difficulties] 
+
+	Project status - incomplete [See Project Difficulties] 
 
 ## Project Difficulties
 
