@@ -33,7 +33,7 @@ In this vignette we meet Samantha Miles. Her journey is unclear, her destination
 ![Background](images/bg.png)
 
 ### Bullets 
-### Smiles prefers conflict resolution. Here our some of her methods
+### Smiles prefers conflict resolution. Here are some of her methods
 
 	Cupcake
 ![Cupcake](images/cupcake.png)
@@ -65,7 +65,7 @@ In this vignette we meet Samantha Miles. Her journey is unclear, her destination
 
 	Project status - incomplete [See Project Difficulties] 
 
-## Project Difficulties
+## Project Difficulties:
 
 The completion of this project has taken a backseat to a myriad of other projects of equal or (most often) greater importance. 
 I am currently working out bugs with my monster class and researching how to implement a list for my bullet class. I have yet to add a Start and End screen and I am considering imbuing the game with a musical motif.  
