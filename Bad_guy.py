@@ -1,7 +1,7 @@
+import math
+import random
 import pygame
 from pygame.sprite import Sprite
-from math import hypot
-from random import randint 
 
 good_guy = pygame.image.load("./images/ghost_sunny.png")
 
@@ -14,21 +14,32 @@ class Bad_guy(Sprite):
 		self.x = 700
 		self.y = 400
 		self.screen = screen
-		self.speed = 2
+		self.speed = 1.5
 		self.rect = self.image.get_rect()
+		self.state = "hostile"
+		self.float_speed = 3
+		self._direction_timer = 0
+		self._dx = 0
+		self._dy = 0
+		self._pick_new_direction()
+
+	def _pick_new_direction(self):
+		angle = random.uniform(0, math.tau)
+		self._dx = math.cos(angle) * self.speed
+		self._dy = math.sin(angle) * self.speed
+		self._direction_timer = random.randint(60, 180)  # roughly 1-3 seconds at 60 FPS
 
 	def update_me(self):
-		# dx = self.x #- the_player.x
-		# dy = self.y #- the_player.y
-		# dist = hypot(dx,dy)
-		# dx = dx / dist
-		# dy = dy / dist
-		# self.x -= dx * self.speed
-		# self.y -= dy * self.speed
 		self.rect.left = self.x
 		self.rect.top = self.y
-		self.x -=  self.speed
-		self.y +=  self.speed
+		if self.state == "rescued":
+			self.y -= self.float_speed
+		else:
+			if self._direction_timer <= 0:
+				self._pick_new_direction()
+			self.x += self._dx
+			self.y += self._dy
+			self._direction_timer -= 1
 
 
 	def draw_me(self):
@@ -37,19 +48,26 @@ class Bad_guy(Sprite):
 		self.screen.blit(self.image,[self.x,self.y])
 
 	def keep_on_screen(self):
+		if self.state == "rescued":
+			return
 		if self.y < 0:
 			self.y = 730
 		elif self.y > 730:
 			self.y = 0
 		if self.x < 0:
 			self.x = 1000
-				
+		elif self.x > 1000:
+			self.x = 0
+
 		
 	def up_and_away(self):
 		self.rect.left = self.x
 		self.rect.top = self.y
-		self.x =  400
-		self.y =  100
-		self.speed = 0
+		self.state = "rescued"
 		self.image = pygame.transform.scale(good_guy,(95,100))
+		self.rect = self.image.get_rect()
+		self.rect.centerx = self.x
+		self.rect.centery = self.y
+		self._dx = 0
+		self._dy = -self.float_speed
 		

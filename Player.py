@@ -8,19 +8,26 @@ class Player(Sprite):
 	# Because this is a subclass, we need to call the parent's (Sprite) __init__
 	def __init__(self,image,start_x,start_y,screen):
 		super(Player,self).__init__()
-		self.image = pygame.image.load("./images/hero_sunny.png")
-		self.image = pygame.transform.scale(self.image,(100,200))
-		self.x = 174
-		self.y = 400
-		self.speed = 10
 		self.screen = screen
+		self.image_path = image
+		self.image = self._load_and_scale(image)
+		self.x = start_x
+		self.y = start_y
+		self.speed = 10
 		self.should_move_up = False
 		self.should_move_down = False
 		self.should_move_left = False
 		self.should_move_right = False
 
-
 	# 2. The methods where you define all the class functions (methods)
+
+	def _load_and_scale(self, image_path):
+		image_surface = pygame.image.load(image_path)
+		return pygame.transform.scale(image_surface,(100,200))
+
+	def set_image(self, image_path):
+		self.image_path = image_path
+		self.image = self._load_and_scale(image_path)
 
 	def draw_me(self):
 		if(self.should_move_up):
@@ -56,8 +63,3 @@ class Player(Sprite):
 			self.x = 1000
 		elif self.x > 1000:
 			self.x = 0 
-			
-
-
-
-			
